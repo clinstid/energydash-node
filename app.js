@@ -7,14 +7,14 @@ var app = restify.createServer();
 module.exports = app; // for testing
 
 var config = {
-  appRoot: __dirname // required config
+    appRoot: __dirname // required config
 };
 
 SwaggerRestify.create(config, function(err, swaggerRestify) {
-  if (err) { throw err; }
+    if (err) { throw err; }
 
-  swaggerRestify.register(app);
+    swaggerRestify.register(app);
 
-  var port = process.env.PORT || 10010;
-  app.listen(port);
+    var port = process.env.PORT || 10010;
+    app.listen(port);
 });
